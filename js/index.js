@@ -49,7 +49,7 @@ for (let i = 0; i < acc.length; i++) {
             if (!acc[0].classList.contains('active')) {
                acc[0].classList.add('active')
             }
-            featureImg.src = '../assets/images/mobile_1.png'
+            featureImg.src = '../assets/images/feature_1.png'
 
 
             acc[1].classList.remove('active')
@@ -60,7 +60,7 @@ for (let i = 0; i < acc.length; i++) {
                acc[1].classList.add('active')
 
             }
-            featureImg.src = '../assets/images/mobile_2.png'
+            featureImg.src = '../assets/images/feature_2.png'
             acc[0].classList.remove('active')
             acc[2].classList.remove('active')
             break;
@@ -68,7 +68,7 @@ for (let i = 0; i < acc.length; i++) {
             if (!acc[2].classList.contains('active')) {
                acc[2].classList.add('active')
             }
-            featureImg.src = '../assets/images/mobile_3.png'
+            featureImg.src = '../assets/images/feature_3.png'
             acc[0].classList.remove('active')
             acc[1].classList.remove('active')
             break;
