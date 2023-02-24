@@ -1,10 +1,4 @@
 /**
- * PLAY VIDEOXS
- */
-const video = document.getElementsByTagName('video')
-video[0].play()
-video[1].play()
-/**
  * ANIMATIONS
  */
 
@@ -27,6 +21,21 @@ const animationMonitoring = lottie.loadAnimation({
 });
 
 animationMonitoring.play();
+/**
+ * MODAL HANDLE
+ */
+const connectModal = document.getElementById('modal-connectwallet')
+function openModal() {
+   connectModal.style.display = 'block'
+   document.body.classList.add('overflowHidden')
+
+}
+function closeModal() {
+   connectModal.style.display = 'none'
+   document.body.classList.remove('overflowHidden')
+}
+
+
 
 /**
  * ACCORDIONS
@@ -60,7 +69,6 @@ for (let i = 0; i < acc.length; i++) {
                acc[2].classList.add('active')
             }
             featureImg.src = '../assets/images/mobile_3.png'
-
             acc[0].classList.remove('active')
             acc[1].classList.remove('active')
             break;
@@ -69,42 +77,19 @@ for (let i = 0; i < acc.length; i++) {
       }
    });
 }
+
 /**
- * ANIMATION DYNAMIC PERCENTEAGE
+ * OPEN MENU
  */
-function animate(obj, initVal, lastVal, duration) {
-   let startTime = null;
-
-   //get the current timestamp and assign it to the currentTime variable
-   let currentTime = Date.now();
-
-   //pass the current timestamp to the step function
-   const step = (currentTime) => {
-
-      //if the start time is null, assign the current time to startTime
-      if (!startTime) {
-         startTime = currentTime;
-      }
-
-      //calculate the value to be used in calculating the number to be displayed
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-
-      //calculate what to be displayed using the value gotten above
-      obj.innerHTML = Math.floor(progress * (lastVal - initVal) + initVal);
-
-      //checking to make sure the counter does not exceed the last value (lastVal)
-      if (progress < 1) {
-         window.requestAnimationFrame(step);
-      } else {
-         window.cancelAnimationFrame(window.requestAnimationFrame(step));
-      }
-   };
-   //start animating
-   window.requestAnimationFrame(step);
+const mobileMenu = document.getElementById('mobile__menu')
+function openMenu() {
+   mobileMenu.style.display = 'block'
+   document.body.classList.add('overflowHidden')
+}
+function closeMenu() {
+   mobileMenu.style.display = 'none'
+   document.body.classList.remove('overflowHidden')
 }
 
 
 
-const dynamics = document.getElementsByClassName("dynamic-percentages__value");
-console.log(dynamics)
-// animateValue(obj, 100, 0, 5000);
