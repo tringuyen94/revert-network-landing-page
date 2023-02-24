@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400;1,700&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
 /* 
 RESET CSSS
@@ -36,9 +34,10 @@ ol {
 
 /* Set default font size and line height */
 body {
-   font-family: 'Montserrat', sans-serif;
+   font-family: 'Inter', sans-serif;
    font-size: 16px;
    /* max-width: 1440px; */
+   background-color: #F4F7FE;
    margin: 0 auto;
 }
 
@@ -156,6 +155,7 @@ nav {
 }
 
 .connect-wallet-btn {
+   text-align: center;
    font-size: 1rem;
    background-color: #F8F8F8;
    padding: 8px 16px 7px;
@@ -297,9 +297,13 @@ nav {
 #features {
    display: flex;
    width: 100%;
-   border-radius: 8px;
+   height: 70vh;
+
+   border-radius: 40px 40px 0px 0px;
    justify-content: space-between;
-   background-image: linear-gradient(279.04deg, #1F5CA4 -13.43%, #3D92F7 105.67%);
+   background-image: url('../assets/images/blue_background.png');
+   background-repeat: no-repeat;
+   background-size: cover;
 
 }
 
@@ -312,7 +316,6 @@ nav {
 }
 
 .feature-image__container img {
-   transition: all ease .5s;
    width: 558px;
    height: 353px;
 }
@@ -357,12 +360,12 @@ nav {
 
 .panel {
    margin-top: 1rem;
-   line-height: 120%;
+   line-height: 26px;
    font-weight: 400;
    font-size: .9rem;
    color: #F8F8F8;
    display: none;
-
+   transition: all ease .5s;
 }
 
 /*  
@@ -388,6 +391,7 @@ Percentages
 .percentages-content p {
    margin-top: 1rem;
    line-height: 1.2rem;
+   padding: 0 2rem;
 }
 
 .dynamic-percentages {
@@ -422,7 +426,7 @@ Percentages
 
 
 .counter::after {
-   content: ' %';
+   content: '%';
 }
 
 
@@ -548,6 +552,16 @@ footer {
    }
 }
 
+@keyframes featureImg {
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
+}
+
 @keyframes openMenu {
    from {
       transform: translateX(100px)
@@ -660,7 +674,9 @@ footer {
       /* display: block; */
 
       position: fixed;
-      background: linear-gradient(297.37deg, #1A76E3 22.01%, #0D3B72 153.65%);
+      background-image: url('../assets/images/mobile_menu_background.png');
+      background-repeat: no-repeat;
+      background-size: cover;
       right: 0;
       top: 0;
       width: 75vw;
@@ -787,16 +803,12 @@ footer {
    */
    #features {
       flex-direction: column;
-      border-radius: 40px;
       margin-top: 4rem;
-
+      height: 130vh;
    }
 
    .feature-image__container {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
    }
 
    .feature-image__container img {
