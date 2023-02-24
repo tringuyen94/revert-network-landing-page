@@ -10,11 +10,61 @@
 </head>
 
 <body>
+
    <header>
+      <!-- MODAL CONNECT WALLET -->
+      <div id="modal-connectwallet">
+         <h1>Connect wallet</h1>
+         <div class="modal-exit" onclick="closeModal()">
+            <img src='./assets/images/exit.png' alt="exit_modal" />
+         </div>
+         <div class="modal-body">
+            <div class="modal-content">
+               <button style="background-color: #BCBEC7;">Browser Only</button>
+               <div>
+                  <img src="./assets/images/trust_wallet.png" alt="trust_wallet" />
+               </div>
+            </div>
+            <div class="modal-content">
+               <button style="background-color:#1A76E3 ;">Popular</button>
+               <div>
+                  <img src="./assets/images/fox.png" alt="trust_wallet" />
+               </div>
+            </div>
+         </div>
+         <div class="modal-footer">
+            <p>Choose one of available wallet providers or create a new wallet.</p>
+         </div>
+
+      </div>
+      <!-- MOBILE MENU -->
+
+      <div id="mobile__menu">
+         <div class="logo-container">
+            <img src="./assets/images/logo.png" alt="logo" />
+         </div>
+         <div class="mobile__exit" onclick="closeMenu()">
+            <img src='./assets/images/exit.png' alt='exit' />
+         </div>
+         <div class="mobile__navigation-wrapper">
+            <ul class="mobile__navigation">
+               <li><a href="#home" class="link">Home</a></li>
+               <li><a href="#aboutus">About us</a></li>
+               <li><a href="#future">Future</a></li>
+            </ul>
+         </div>
+         <div class="mobile__menu-bottom">
+            <p>© 2023 Revert Network</p>
+         </div>
+      </div>
+      <!--  VIDEO BANNER -->
       <div class="video-container">
-         <video autoplay loop>
+         <video autoplay loop muted>
             <source src='./assets/videos/Particle_WaveDigital.mp4' type="video/mp4" />
          </video>
+         <div class="mobile_banner">
+            <img src='./assets/images/banner_mobile.png' alt='mobile_banner' />
+         </div>
          <nav>
             <div class="logo-container">
                <img src="./assets/images/logo.png" alt="logo" />
@@ -25,7 +75,11 @@
                   <li><a href="#aboutus">About us</a></li>
                   <li><a href="#future">Future</a></li>
                </ul>
-               <button class="connect-wallet-btn">Connect Wallet</button>
+               <button class="connect-wallet-btn" onclick="openModal()">Connect Wallet</button>
+            </div>
+            <!-- BURGER BUTTON -->
+            <div class="burger-button" onclick="openMenu()">
+               <img src='./assets/images/burger_button.png' alt="burger" />
             </div>
          </nav>
          <div class='titles-container'>
@@ -34,28 +88,34 @@
             <button>Get Started ></button>
          </div>
       </div>
+
    </header>
+   <!--  ABOUT US -->
+
    <section id="aboutus">
       <div class="cube-animation__wrapper">
-         <video autoplay loop>
+         <video autoplay loop muted>
             <source src="./assets/videos/cube.webm" type="video/mp4" />
          </video>
       </div>
       <div class="aboutus-content__wrapper">
          <h1>About us</h1>
          <p>
-            Revert Network is a leading provider of innovative financial technology solutions, leveraging the power of
+            Revert Network is a leading provider of innovative financial technology solutions, leveraging the power
+            of
             artificial intelligence to revolutionize cryptocurrency market transactions. With a focus on security,
             efficiency, and user-centered design, our goal is to shape the future of finance through technology.
          </p>
 
       </div>
    </section>
+   <!--  AI POWER TRADING -->
    <section id="aipoweredtrading">
       <div class="aipoweredtrading-content__wrapper">
          <h1>AI-Powered Trading</h1>
          <p>
-            Revert Network is a leading provider of innovative financial technology solutions, leveraging the power of
+            Revert Network is a leading provider of innovative financial technology solutions, leveraging the power
+            of
             artificial intelligence to revolutionize cryptocurrency market transactions. With a focus on security,
             efficiency, and user-centered design, our goal is to shape the future of finance through technology.
          </p>
@@ -63,6 +123,7 @@
       </div>
       <div id="animation-revertrobot"></div>
    </section>
+   <!--   FREATURE ACCORDIONS -->
    <div id="features">
       <div class="feature-image__container">
          <img id="feature-img" src='./assets/images/mobile_1.png' alt="mobile" />
@@ -98,23 +159,22 @@
 
             </p>
          </div>
-
       </div>
-
    </div>
+
+   <!--  24/ 7 MONITOR -->
    <section id="monitor">
       <div class="monitor-content__wrapper">
-         <h1>AI-Powered Trading</h1>
+         <h1>24/7 Monitoring</h1>
          <p>
-            Revert Network is a leading provider of innovative financial technology solutions, leveraging the power
-            of
-            artificial intelligence to revolutionize cryptocurrency market transactions. With a focus on security,
-            efficiency, and user-centered design, our goal is to shape the future of finance through technology.
+            The platform's AI technology provides 24/7 monitoring of the cryptocurrency market, providing users with
+            real-time alerts and notifications of important market events.
          </p>
 
       </div>
       <div id="animation-247monitoring"></div>
    </section>
+   <!--  COUNT UP  -->
    <section id="percentages">
       <div class="percentages-content">
          <h1>Text Demo</h1>
@@ -122,12 +182,22 @@
             industry's standard dummy text ever since the 1500s,</p>
       </div>
       <div class="dynamic-percentages">
-         <div class="dynamic-percentages__value">31% <span>Reserve Pool</span></div>
-         <div class="dynamic-percentages__value">45% <span>Community Rewards</span></div>
-         <div class="dynamic-percentages__value">12% <span>Bounty & Advisors</span></div>
+         <div class="dynamic-percentages__value">
+            <div class="counter">31</div>
+            <p> Reserve Pool</p>
+         </div>
+         <div class="dynamic-percentages__value">
+            <div class="counter">45</div>
+            <p>Community Rewards</p>
+         </div>
+         <div class="dynamic-percentages__value">
+            <div class="counter">12</div>
+            <p>Bounty & Advisors</p>
+         </div>
       </div>
-
    </section>
+
+   <!-- FOOTER -->
    <footer>
       <div class="left-footer">
          Revert Network | Build Your Fututer With AI
@@ -145,11 +215,20 @@
             <li><img src='./assets/images/discord.png' alt="discord" /></li>
          </ul>
       </div>
-
    </footer>
+
+   <!--  JAVASCRIPT -->
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+   <script src='./js/jquery.countup.min.js'>
+      $('.counter').countUp()
+   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js"></script>
+   <script src="./js/index.js">
+   </script>
 </body>
-<script src=" https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js">
-</script>
-<script src="./js/index.js"></script>
+
+
 
 </html>
