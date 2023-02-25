@@ -196,6 +196,7 @@ nav {
    padding: 12px 24px;
    width: 10.3rem;
    height: 2.6rem;
+
    font-size: 1rem;
    color: #FFFFFF;
 }
@@ -677,6 +678,13 @@ footer {
    .titles-container h2 {
       font-size: 20px;
       margin-top: 1rem;
+   }
+
+   .titles-container button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 35px;
    }
 
    /* 
