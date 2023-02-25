@@ -425,10 +425,22 @@ Percentages
 }
 
 
-.counter::after {
-   content: '%';
+/* 
+   CALENDAR
+*/
+#calendar {
+   width: 100%;
+
 }
 
+#calendar img {
+   width: 100%;
+   height: 100%;
+}
+
+.temp-mobile-calendar {
+   display: none;
+}
 
 /* 
 FOOTER
@@ -440,6 +452,7 @@ footer {
    justify-content: space-between;
    align-items: center;
    padding: 2rem 6.2rem;
+   margin-top: 2rem;
 }
 
 .right-footer {
@@ -606,10 +619,13 @@ footer {
 
    .connect-wallet-btn {
       font-size: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 150px;
       height: 32px;
       margin-right: 0;
-      transform: translateX(10px);
+      transform: translateX(-8px);
    }
 
 
@@ -650,20 +666,17 @@ footer {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-110px, -70px);
+      transform: translate(-113px, -93px);
    }
 
    .titles-container h1 {
-      font-size: 1.5rem;
+      font-size: 23px;
       line-height: 28px;
    }
 
    .titles-container h2 {
-      font-size: 1rem;
-      color: #F8F8F8;
+      font-size: 20px;
       margin-top: 1rem;
-
-
    }
 
    /* 
@@ -805,6 +818,9 @@ footer {
       flex-direction: column;
       margin-top: 4rem;
       height: 130vh;
+      align-items: center;
+      justify-content: center;
+      background-color: #3E8DED;
    }
 
    .feature-image__container {
@@ -813,7 +829,7 @@ footer {
 
    .feature-image__container img {
       width: 100%;
-      height: 250px;
+      height: 220px;
    }
 
    .feature-contents {
@@ -942,6 +958,19 @@ footer {
    .dynamic-percentages__value p {
       margin-top: .2rem;
    }
+
+   /*
+    CALENDAR
+    */
+   .temp-calendar {
+      display: none;
+   }
+
+   .temp-mobile-calendar {
+      display: block;
+   }
+
+
 
 
    /* 
