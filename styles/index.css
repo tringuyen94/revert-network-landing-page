@@ -597,8 +597,13 @@ footer {
    /* 
       HEADER
    */
+   .video-container {
+      height: 80vh;
+      overflow: hidden;
+   }
+
    .video-container video {
-      display: none;
+      scale: 9;
    }
 
    .navigation {
@@ -649,7 +654,7 @@ footer {
       scale: 1.2;
    }
 
-   .mobile_banner {
+   /* .mobile_banner {
       width: 100%;
       display: block;
       height: 63vh;
@@ -658,7 +663,7 @@ footer {
    .mobile_banner img {
       height: 100%;
       width: 100%;
-   }
+   } */
 
    .titles-container {
       width: 60%;
