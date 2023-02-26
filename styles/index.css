@@ -108,21 +108,16 @@ nav {
    width: 100%;
 }
 
-.logo-container {
-   width: 60px;
-   height: 60px;
+.logo {
+   width: 242.64px;
+   height: 64px;
    margin-left: 6.6rem;
-   margin-top: 0.6rem;
-   border-radius: 50%;
-   border: 2px solid white;
+   margin-top: 1.2rem;
 }
 
-.logo-container img {
-   width: 100%;
-   height: 100%;
+.logo_mobile {
+   display: none;
 }
-
-
 
 .navigation-wrapper {
    display: flex;
@@ -172,7 +167,7 @@ nav {
    position: absolute;
    top: 50%;
    left: 50%;
-   transform: translate(-200px, -100px);
+   transform: translate(-330px, -60px);
 }
 
 .titles-container h1 {
@@ -182,15 +177,15 @@ nav {
    color: #F8F8F8;
 }
 
-.titles-container h2 {
+/* .titles-container h2 {
    font-weight: 400;
    font-size: 2.25rem;
    color: #F8F8F8;
    margin: 2rem 0;
 
-}
+} */
 
-.titles-container button {
+/* .titles-container button {
    background-color: #25AA40;
    border-radius: 10px;
    padding: 12px 24px;
@@ -199,7 +194,7 @@ nav {
 
    font-size: 1rem;
    color: #FFFFFF;
-}
+} */
 
 /* 
  ABOUT US
@@ -226,9 +221,10 @@ nav {
 }
 
 .aboutus-content__wrapper p {
-   color: #2A303D;
+   color: #8F92A1;
    line-height: 2rem;
    margin-top: 1.8rem;
+
 }
 
 /* 
@@ -255,9 +251,9 @@ nav {
 }
 
 .aipoweredtrading-content__wrapper p {
-   color: #2A303D;
    line-height: 28px;
    margin-top: 1.8rem;
+   color: #8F92A1;
 }
 
 
@@ -287,10 +283,11 @@ nav {
 }
 
 .monitor-content__wrapper p {
-   color: #2A303D;
    line-height: 28px;
    margin-top: 1.8rem;
+   color: #8F92A1;
 }
+
 
 /* 
   Features
@@ -453,7 +450,6 @@ footer {
    justify-content: space-between;
    align-items: center;
    padding: 2rem 6.2rem;
-   margin-top: 2rem;
 }
 
 .right-footer {
@@ -477,78 +473,6 @@ footer {
    margin-right: 1rem;
 }
 
-/* 
-   MODAL CONNECT WALLET
-*/
-
-#modal-connectwallet {
-   position: fixed;
-   top: 10rem;
-   left: 20rem;
-   background-color: #FFFFFF;
-   width: 800px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   text-align: center;
-   padding: 2rem;
-   border-radius: 12px;
-   z-index: 1000;
-   display: none;
-   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-   animation: openModal ease .25s;
-}
-
-.modal-exit {
-   position: absolute;
-   cursor: pointer;
-   right: 2.2rem;
-   top: 2.2rem;
-}
-
-.modal-exit {
-   width: 20px;
-   height: 20px;
-}
-
-.modal-header {
-   display: flex;
-   justify-content: space-between;
-}
-
-.modal-body {
-   display: flex;
-   justify-content: space-between;
-}
-
-.modal-content {
-   margin-top: 3rem;
-   width: 320px;
-   height: 186px;
-   position: relative;
-   background-color: #F8F8F8;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-
-.modal-content button {
-   font-size: 16px;
-   color: #FFFFFF;
-   position: absolute;
-   padding: 8px 20px;
-   width: 139px;
-   top: -17px;
-   left: calc(50% - 139px/2 + 0.5px);
-   border-radius: 12px;
-}
-
-.modal-footer p {
-   margin-top: 2rem;
-   font-size: 1rem;
-   color: #8C8C8C;
-   font-weight: 500;
-}
 
 /* 
 
@@ -610,19 +534,21 @@ footer {
       display: none;
    }
 
-   .logo-container {
-      width: 40px;
-      height: 40px;
-      transform: translateX(-60px);
-      border: 2px solid white;
+
+   .logo {
+      display: none
    }
 
-   .logo-container img {
-      width: 100%;
-      height: 100%;
+   .logo_mobile {
+      display: block;
+      width: 50px;
+      margin-left: 40px;
+      margin-top: 3rem;
    }
 
 
+
+   /* 
    .connect-wallet-btn {
       font-size: 1rem;
       display: flex;
@@ -632,16 +558,16 @@ footer {
       height: 32px;
       margin-right: 0;
       transform: translateX(-8px);
-   }
+   } */
 
 
    .burger-button {
       display: block;
       cursor: pointer;
-      width: 24px;
-      height: 24px;
+      width: 35px;
+      height: 35px;
       margin-right: 30px;
-      margin-top: 10px;
+      margin-top: 40px;
       transition: scale .25s ease;
    }
 
@@ -654,16 +580,6 @@ footer {
       scale: 1.2;
    }
 
-   /* .mobile_banner {
-      width: 100%;
-      display: block;
-      height: 63vh;
-   }
-
-   .mobile_banner img {
-      height: 100%;
-      width: 100%;
-   } */
 
    .titles-container {
       width: 60%;
@@ -983,9 +899,6 @@ footer {
       display: block;
    }
 
-
-
-
    /* 
    FOOTER MOBILE
    */
@@ -1027,7 +940,7 @@ footer {
    MODAL CONNECT WALLET MOBILE
 */
 
-   #modal-connectwallet {
+   /* #modal-connectwallet {
       top: 5rem;
       left: 3rem;
       width: 80vw;
@@ -1054,7 +967,7 @@ footer {
 
    .modal-content {
       width: 100%;
-   }
+   } */
 
 
 }
