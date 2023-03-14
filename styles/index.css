@@ -426,19 +426,78 @@ Percentages
 /* 
    CALENDAR
 */
-#calendar {
+
+
+
+.calendar-header {
+   display: flex;
    width: 100%;
-
+   align-items: center;
+   justify-content: space-between;
 }
 
-#calendar img {
+.calendar-header h1 {
+   font-size: 2.9rem;
+   line-height: 56px;
+   font-weight: 700;
+}
+
+.btn-showcalendar {
+   width: 236px;
+   height: 43px;
+   padding: 12px 24px;
+   font-size: 16px;
+   background: transparent;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color: #1A76E3;
+   border: 1px solid #1A76E3;
+   border-radius: 4px;
+   outline: none;
+   transition: all .25s ease;
+}
+
+.btn-showcalendar:hover {
+   scale: 1.1;
+}
+
+#arrow {
+   width: 16px;
+   height: 16px;
+   transition: all .25s ease;
+}
+
+#calendar_content {
    width: 100%;
-   height: 100%;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   margin: 2rem 0;
+   animation: openCalendar .5s ease;
 }
 
-.temp-mobile-calendar {
-   display: none;
+#calendar_content div {
+   color: #8F92A1;
+   font-weight: 400;
+   font-size: 16px;
+   margin-top: 1rem;
+   border-radius: 4px;
+   background-color: #FFFFFF;
+   display: flex;
+
+   flex-direction: column;
+   padding: .2rem 0;
+   align-items: center;
+   justify-content: space-evenly;
+   width: calc(100vw/8.5);
+   height: 71px;
+   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
+
+
+
+
+
 
 /* 
 FOOTER
@@ -471,6 +530,7 @@ footer {
 
 .social li {
    margin-right: 1rem;
+   cursor: pointer;
 }
 
 
@@ -500,13 +560,16 @@ footer {
    }
 }
 
-@keyframes openMenu {
+@keyframes openCalendar {
    from {
-      transform: translateX(100px)
+      opacity: 0;
+      transform: translateY(-500px);
    }
 
    to {
-      transform: translateX(0)
+      opacity: 1;
+      transform: translateY(0);
+
    }
 }
 
@@ -546,8 +609,6 @@ footer {
       margin-top: 3rem;
    }
 
-
-
    /* 
    .connect-wallet-btn {
       font-size: 1rem;
@@ -559,7 +620,6 @@ footer {
       margin-right: 0;
       transform: translateX(-8px);
    } */
-
 
    .burger-button {
       display: block;
@@ -888,16 +948,45 @@ footer {
       margin-top: .2rem;
    }
 
-   /*
-    CALENDAR
-    */
-   .temp-calendar {
-      display: none;
+   /* 
+   
+      CALENDAR
+   */
+   .calendar-header {
+      flex-direction: column;
    }
 
-   .temp-mobile-calendar {
-      display: block;
+   .calendar-header h1 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 22px;
+      text-align: center;
    }
+
+   .btn-showcalendar {
+      margin-top: 20px;
+   }
+
+
+   #arrow {
+      width: 16px;
+      height: 16px;
+      transition: all .25s ease;
+   }
+
+   #calendar_content {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin: 2rem 0;
+      animation: openCalendar .5s ease;
+   }
+
+   #calendar_content div {
+      width: 85px;
+   }
+
+
 
    /* 
    FOOTER MOBILE
@@ -936,38 +1025,7 @@ footer {
       margin-right: 0;
    }
 
-   /* 
-   MODAL CONNECT WALLET MOBILE
-*/
 
-   /* #modal-connectwallet {
-      top: 5rem;
-      left: 3rem;
-      width: 80vw;
-      height: 80vh;
-   }
-
-   #modal-connectwallet h1 {
-      font-size: 1.5rem;
-   }
-
-   .modal-exit {
-      position: absolute;
-      cursor: pointer;
-      right: 1rem;
-      top: 1rem;
-      width: 20px;
-      height: 20px;
-   }
-
-
-   .modal-body {
-      flex-direction: column;
-   }
-
-   .modal-content {
-      width: 100%;
-   } */
 
 
 }
