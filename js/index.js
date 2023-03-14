@@ -96,53 +96,45 @@ function closeMenu() {
 /**
  * CREATE A CALENDAR
  * 
- */
-// Set the date to 28 days ago
-// Set the date to 28 days ago
-const today = new Date();
-const pastDate = new Date(today.getTime() - 28 * 24 * 60 * 60 * 1000);
-
-// Create an array to hold the previous 28 days
-const previous28Days = [];
-
-// Loop through the previous 28 days and add them to the array
-for (let i = 0; i < 28; i++) {
-   const date = new Date(pastDate.getTime() + i * 24 * 60 * 60 * 1000);
-   const element = { date: date, interest: '1.5%' };
-   previous28Days.push(element);
+*/
+const calendarContent = document.getElementById('calendar_content')
+const imgArrow = document.getElementById('arrow')
+const sortedData = async () => {
+   let res = await fetch('http://localhost:8080/api/v1/calendar', {
+      method: "GET",
+      headers: {
+         'Content-Type': 'application/json',
+         'Accept': 'application/json'
+      }
+   })
+   let data = await res.json()
+   return data
 }
+const toggleCalendar = async () => {
+   if (calendarContent.childElementCount === 0) {
+      let dataCalendar = await sortedData()
+      for (let i = 0; i < dataCalendar.length; i++) {
+         const itemContent = document.createElement('div')
+         const pItem = document.createElement('p')
+         const itemDate = new Date(dataCalendar[i]?.date)
 
-// Get a reference to the table element in the HTML document
-const table = document.getElementById('calendar-table');
-
-// Loop through the array and create table rows for each week
-let weekStart = 0;
-while (weekStart < previous28Days.length) {
-   // Create a table row for the week
-   const row = document.createElement('tr');
-
-   // Loop through the next 7 days and create table cells for each day
-   for (let i = weekStart; i < weekStart + 7 && i < previous28Days.length; i++) {
-      // Create a table cell for the date
-      const dateCell = document.createElement('td');
-      const dateString = previous28Days[i].date.toLocaleDateString();
-      dateCell.textContent = dateString;
-      row.appendChild(dateCell);
-
-      // Create a table cell for the interest rate
-      const interestCell = document.createElement('td');
-      interestCell.textContent = previous28Days[i].interest;
-      row.appendChild(interestCell);
+         itemContent.textContent = `${itemDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`
+         pItem.textContent = `↑ ${dataCalendar[i]?.interest}`
+         pItem.style.color = '#25AA40'
+         if (!dataCalendar[i]?.isWin) {
+            pItem.style.color = 'red'
+            pItem.textContent = `↓ ${dataCalendar[i]?.interest}`
+         }
+         itemContent.appendChild(pItem)
+         calendarContent.appendChild(itemContent)
+      }
    }
-
-   // Add the row to the table
-   table.appendChild(row);
-
-   // Move to the next week
-   weekStart += 7;
+   if (calendarContent.style.display === 'none') {
+      calendarContent.style.display = 'flex'
+      imgArrow.style.transform = 'rotate(180deg)'
+   } else {
+      calendarContent.style.display = 'none'
+      imgArrow.style.transform = 'rotate(360deg)'
+   }
 }
-
-
-
-
 
