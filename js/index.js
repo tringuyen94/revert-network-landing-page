@@ -100,7 +100,7 @@ function closeMenu() {
 const calendarContent = document.getElementById('calendar_content')
 const imgArrow = document.getElementById('arrow')
 const sortedData = async () => {
-   let res = await fetch('http://localhost:8080/api/v1/calendar', {
+   let res = await fetch('https://random-interest-node.herokuapp.com/api/v1/calendar', {
       method: "GET",
       headers: {
          'Content-Type': 'application/json',
